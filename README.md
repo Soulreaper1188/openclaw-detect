@@ -1,4 +1,23 @@
+```
+██╗  ██╗███╗   ██╗ ██████╗ ███████╗████████╗██╗ ██████╗
+██║ ██╔╝████╗  ██║██╔═══██╗██╔════╝╚══██╔══╝██║██╔════╝
+█████╔╝ ██╔██╗ ██║██║   ██║███████╗   ██║   ██║██║     
+██╔═██╗ ██║╚██╗██║██║   ██║╚════██║   ██║   ██║██║     
+██║  ██╗██║ ╚████║╚██████╔╝███████║   ██║   ██║╚██████╗
+╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝ ╚═════╝
+```
+
 # OpenClaw Detection Scripts
+
+**By [Knostic](https://knostic.ai/)**
+
+> **Find OpenClaw on managed devices.** Lightweight detection scripts for macOS, Linux, and Windows that check for CLI binaries, app bundles, config files, gateway services, and Docker artifacts. Designed for MDM deployment via Jamf, Intune, JumpCloud, and more.
+
+**Like the tool?** Check out how Knostic helps you with visibility and control of your coding agents and MCP/extensions, from Cursor and Claude Code, to Copilot.
+
+---
+
+# OpenClaw Detection Scripts - TL;DR
 
 Detection scripts for MDM deployment to identify OpenClaw installations on managed devices.
 
@@ -80,3 +99,10 @@ docker-image: not-found
 | Jamf Pro | [docs/jamf.md](docs/jamf.md) |
 | VMware Workspace ONE | [docs/workspace-one.md](docs/workspace-one.md) |
 | Kandji | [docs/kandji.md](docs/kandji.md) |
+
+---
+
+- ## License
+
+Apache 2.0 — see LICENSE for details.
+
