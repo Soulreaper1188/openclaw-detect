@@ -18,8 +18,8 @@ Detection scripts for MDM deployment to identify OpenClaw installations on manag
 
 ## Exit Codes
 
-| Exit Code | Meaning | JumpCloud Status |
-|-----------|---------|------------------|
+| Exit Code | Meaning | MDM Status |
+|-----------|---------|------------|
 | 0 | NOT installed | Success (clean) |
 | 1 | Installed (running or not) | Error (found) |
 | 2 | Script error | Error (investigate) |
@@ -71,62 +71,12 @@ docker-image: not-found
 
 ---
 
-## JumpCloud Integration
+## MDM Integration
 
-JumpCloud Commands run scripts via the agent on managed devices, capturing stdout, stderr, and exit codes. Results are stored for 30 days.
-
-### Setup via UI
-
-1. Go to **DEVICE MANAGEMENT > Commands > +**
-2. **Name:** OpenClaw Detection
-3. **Command Type:** Shell (macOS/Linux) or PowerShell (Windows)
-4. **Command:**
-   ```bash
-   curl -sL https://knostic.ai/detect-openclaw.sh | bash
-   ```
-5. **Run as:** root (to scan all users) or current user
-6. **Schedule:** Manual, scheduled, or triggered
-
-### Setup via API
-
-```bash
-# macOS/Linux
-curl -X POST https://console.jumpcloud.com/api/commands/ \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: YOUR_API_KEY' \
-  -d '{
-    "name": "OpenClaw Detection",
-    "command": "curl -sL https://knostic.ai/detect-openclaw.sh | bash",
-    "commandType": "mac",
-    "sudo": true,
-    "timeout": "120"
-  }'
-
-# Windows
-curl -X POST https://console.jumpcloud.com/api/commands/ \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: YOUR_API_KEY' \
-  -d '{
-    "name": "OpenClaw Detection (Windows)",
-    "command": "iwr -useb https://knostic.ai/detect-openclaw.ps1 | iex",
-    "commandType": "windows",
-    "shell": "powershell",
-    "timeout": "120"
-  }'
-```
-
-### Viewing Results
-
-1. Go to **DEVICE MANAGEMENT > Commands**
-2. Select the command
-3. Click **Results** tab
-4. Filter by exit code:
-   - Exit 0 = Clean (OpenClaw not installed)
-   - Exit 1 = Found (OpenClaw detected - review needed)
-   - Exit 2 = Error (script failed - investigate)
-
-### Compliance Alerts
-
-Configure JumpCloud alerts to trigger on exit code 1 (OpenClaw detected) for shadow IT monitoring.
+| Platform | Guide |
+|----------|-------|
+| JumpCloud | [docs/jumpcloud.md](docs/jumpcloud.md) |
+| Microsoft Intune | [docs/intune.md](docs/intune.md) |
+| Jamf Pro | [docs/jamf.md](docs/jamf.md) |
+| VMware Workspace ONE | [docs/workspace-one.md](docs/workspace-one.md) |
+| Kandji | [docs/kandji.md](docs/kandji.md) |
