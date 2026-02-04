@@ -7,17 +7,34 @@ $script:Profile = $env:OPENCLAW_PROFILE
 $Port = if ($env:OPENCLAW_GATEWAY_PORT) { $env:OPENCLAW_GATEWAY_PORT } else { 18789 }
 $script:Output = [System.Collections.ArrayList]::new()
 
+function Show-Banner {
+    $banner = @"
+
+  _  ___  _  ___  ___  _____ ___ ___
+ | |/ / \| |/ _ \/ __|_   _|_ _/ __|
+ | ' <| .  | (_) \__ \ | |  | | (__
+ |_|\_\_|\_|\___/|___/ |_| |___\___|
+
+ Open source from Knostic - https://knostic.ai
+ OpenClaw Detection Script
+
+"@
+    Write-Output $banner
+}
+
+Show-Banner
+
 function Out {
     param([string]$Line)
     [void]$script:Output.Add($Line)
 }
 
 function Get-StateDir {
-    param([string]$Home)
+    param([string]$HomeDir)
     if ($script:Profile) {
-        return Join-Path $Home ".openclaw-$($script:Profile)"
+        return Join-Path $HomeDir ".openclaw-$($script:Profile)"
     }
-    return Join-Path $Home ".openclaw"
+    return Join-Path $HomeDir ".openclaw"
 }
 
 function Get-UsersToCheck {
@@ -57,13 +74,13 @@ function Test-CliGlobal {
 }
 
 function Test-CliForUser {
-    param([string]$Home)
+    param([string]$HomeDir)
     $locations = @(
-        (Join-Path $Home "AppData\Local\Programs\openclaw\openclaw.exe"),
-        (Join-Path $Home "AppData\Roaming\npm\openclaw.cmd"),
-        (Join-Path $Home "AppData\Local\pnpm\openclaw.cmd"),
-        (Join-Path $Home ".volta\bin\openclaw.exe"),
-        (Join-Path $Home "scoop\shims\openclaw.exe")
+        (Join-Path $HomeDir "AppData\Local\Programs\openclaw\openclaw.exe"),
+        (Join-Path $HomeDir "AppData\Roaming\npm\openclaw.cmd"),
+        (Join-Path $HomeDir "AppData\Local\pnpm\openclaw.cmd"),
+        (Join-Path $HomeDir ".volta\bin\openclaw.exe"),
+        (Join-Path $HomeDir "scoop\shims\openclaw.exe")
     )
     foreach ($loc in $locations) {
         if (Test-Path $loc) {
